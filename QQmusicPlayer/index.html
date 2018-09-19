@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ播放器</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/lyric.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="header">
+    <a class="logo" href="#">
+        <img src="images/player_logo.png" alt="qq音乐" class="logoImg">
+    </a>
+    <div class="loadSet">
+        <span class="load">登录</span>
+        <span class="set">设置</span>
+    </div>
+</div>
+<div class="container">
+    <div class="slideLeft">
+        <div class="toolBar">
+            <a href="javascript:;" class="mus_like mus_btn">
+                <span class="mus_icon mus_icon_like"></span>收藏
+            </a>
+            <a href="javascript:;" class="mus_add mus_btn">
+                <span class="mus_icon mus_icon_add"></span>添加到
+            </a>
+            <a href="javascript:;" class="mus_down mus_btn">
+                <span class="mus_icon mus_icon_down"></span>下载
+            </a>
+            <a href="javascript:;" class="mus_del mus_btn">
+                <span class="mus_icon mus_icon_del"></span>删除
+            </a>
+            <a href="javascript:;" class="mus_clear mus_btn">
+                <span class="mus_icon mus_icon_clear"></span>清空列表
+            </a>
+        </div>
+        <div class="content_list">
+        <ul class="dataList">
+            <li class="musList_item_header">
+                <div class="musList_sel_all">
+                    <label><input type="checkbox"  class="check"></label>
+                    <!--<label for="check"></label>-->
+                </div>
+                <div class="musList_song_header">歌曲</div>
+                <div class="musList_songer_header">歌手</div>
+                <div class="musList_time_header">时长</div>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="slideRight">
+        <div class="song_info">
+            <div class="song_info_img">
+                <img src="" alt="音乐封面">
+                <i></i>
+            </div>
+            <p>歌曲名：<span class="song_name">戒你</span></p>
+            <p>歌手名：<span class="songer_name1">陶心瑶</span></p>
+            <p>专辑名：<span class="album_name">戒你</span></p>
+        </div>
+        <div class="lyric_div">
+        <div class="song_info_lyric">
+            <p>在山的那边</p>
+            <p>在海的那边</p>
+            <p>有一群蓝精灵</p>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_in">
+        <a href="javascript:;" class="music_pre"></a>
+        <a href="javascript:;" class="music_play"></a>
+        <a href="javascript:;" class="music_next"></a>
+        <div class="music_progress_info">
+            <div class="music_progress_top">
+                <span class="music_progress_name"></span>
+                <div class="music_progress_time">
+                    <span class="time_cur">00:00</span>
+                    <span>/</span>
+                    <span class="time_total"></span>
+                </div>
+            </div>
+            <div class="music_progress_bar">
+                <div class="music_progress_line">
+                    <div class="music_progress_dot"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="music_mode"></a>
+        <a href="javascript:;" class="music_fav"></a>
+        <a href="javascript:;" class="music_down"></a>
+        <a href="javascript:;" class="music_comment"></a>
+        <a href="javascript:;" class="music_only"></a>
+        <div class="music_voice_info">
+            <a href="javascript:;" class="music_voice_icon"></a>
+            <div class="music_voice_bar">
+                <div class="music_voice_line">
+                    <div class="music_voice_dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask_bg"></div>
+<div class="mask"></div>
+<audio src=""></audio>
+</body>
+<script>
+
+
+</script>
+</html>
