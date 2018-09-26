@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>canvas时钟</title>
+    <style>
+        #cas{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cas" width="500" height="500"></canvas>
+    <script>
+        let cas=document.getElementById('cas');
+        let cas2d=cas.getContext('2d');
+
+        setInterval(run,1000);
+         function run(){
+             clear();
+            var time=new Date();
+            var sec=time.getSeconds();
+            var min=time.getMinutes();
+            var hour=time.getHours();
+            hour=hour>12?hour-12:hour;
+            cas2d.translate(250,250);
+            //绘制样式
+            cas2d.strokeStyle='rgb(0,0,0)';
+            cas2d.lineCap='round';
+            cas2d.lineWidth='5';
+            cas2d.save();
+            //绘制时针
+            var celldrag=2*Math.PI/12;
+            var hrag=hour*celldrag+(min/60)*celldrag;
+            cas2d.beginPath();
+            cas2d.rotate(hrag);
+            cas2d.moveTo(0,0);
+            cas2d.lineTo(0,-40);
+            cas2d.stroke();
+            cas2d.restore();
+            //绘制分针
+            var mrag=min*(2*Math.PI/60);
+            cas2d.save();
+            cas2d.beginPath();
+            cas2d.rotate(mrag);
+            cas2d.moveTo(0,0);
+            cas2d.lineTo(0,-60);
+            cas2d.stroke();
+            cas2d.restore();
+            //绘制秒针
+            var srag=sec*2*Math.PI/60;
+            cas2d.save();
+            cas2d.beginPath();
+            cas2d.rotate(srag);
+            cas2d.lineWidth='2';
+            cas2d.strokeStyle='rgb(255,0,0)';
+            cas2d.moveTo(0,0);
+            cas2d.lineTo(0,-60);
+            cas2d.stroke();
+            cas2d.closePath();
+            cas2d.restore();
+
+            cas2d.translate(-250,-250);
+            cas2d.rotate(0);
+            //画圆
+            cas2d.lineWidth='10';
+            cas2d.beginPath();
+            cas2d.arc(250,250,100,0,2*Math.PI,false);
+            cas2d.stroke();
+            //中心点
+            cas2d.beginPath();
+            cas2d.arc(250,250,8,0,2*Math.PI,false);
+            cas2d.fill();
+            //时钟刻度
+            cas2d.strokeStyle='rgb(128,128,128)';
+            cas2d.lineWidth='7';
+            cas2d.lineCap='butt';
+            cas2d.beginPath();
+            cas2d.moveTo(155,250);
+            cas2d.lineTo(167,250);
+            cas2d.moveTo(345,250);
+            cas2d.lineTo(333,250);
+            cas2d.moveTo(250,155);
+            cas2d.lineTo(250,167);
+            cas2d.moveTo(250,345);
+            cas2d.lineTo(250,333);
+            cas2d.stroke();
+         }
+         function clear(){
+             cas2d.clearRect(0,0,cas2d.canvas.width,cas2d.canvas.height);
+         }
+ 
+    </script>
+</body>
+</html>
