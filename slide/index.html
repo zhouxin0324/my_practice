@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pageindex</title>
+    <link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+    <script src='./js/util.js'></script>
+    <script src='./js/pagination.js'></script>
+    <script>
+        var pagination=new Pagination({
+            container:document.body
+        });
+        pagination.pages.forEach(function(page,index){
+            page.addEventListener('click',function(){
+                pagination.pageIndex=index+1;
+                pagination.nav();
+            })
+        });
+        pagination.prev.addEventListener('click',function(){
+            pagination._prev();
+        })
+        pagination.next.addEventListener('click',function(){
+            pagination._next();
+        })
+    </script>
+</body>
+</html>

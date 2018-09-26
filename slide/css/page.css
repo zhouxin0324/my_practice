@@ -1,0 +1,12 @@
+.m-page{
+    list-style-type: none;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.m-page .z-active{
+    color:red;
+}
+.m-page li{
+    display:inline-block;
+}
