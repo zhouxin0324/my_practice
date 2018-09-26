@@ -1,0 +1,39 @@
+.m-slider{
+    position:relative;
+    transition-property:transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+.m-slider,.m-slider .slide{
+    height:40%;
+    width:100%;
+}
+.m-slider .slide{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.m-slider .slide img{
+    position: absolute;
+    max-width:100%;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.m-cursor{
+    position: absolute;
+    top:60%;
+    list-style-type:none;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.m-cursor li{
+    display:inline-block;
+    width:20px;
+    border-radius:15px;
+    text-align: center;
+    border:0.5px solid rgb(68, 68, 67); 
+}
